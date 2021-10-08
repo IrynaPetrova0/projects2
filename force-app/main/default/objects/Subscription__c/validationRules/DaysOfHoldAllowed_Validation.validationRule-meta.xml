@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DaysOfHoldAllowed_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+
+AND(
+ISPICKVAL( Reader__r.Subscription_Type__c, &quot;VIP&quot;),Days_Of_Hold_Allowed__c &gt; 365),
+
+AND(
+ISPICKVAL( Reader__r.Subscription_Type__c, &quot;Year&quot;),Days_Of_Hold_Allowed__c &gt; 61),
+
+AND(
+ISPICKVAL( Reader__r.Subscription_Type__c, &quot;Month&quot;),Days_Of_Hold_Allowed__c &gt; 61),
+
+AND(
+ISPICKVAL( Reader__r.Subscription_Type__c, &quot;One-time&quot;),Days_Of_Hold_Allowed__c &gt; 0)
+)</errorConditionFormula>
+    <errorMessage>No more than 2 months of rent are allowed. If Reader is VIP, no more than 1 year of rent is allowed. Also if Reader has &quot;one-time&quot; subscription, there is a restriction to take books home (only hall reader).</errorMessage>
+</ValidationRule>

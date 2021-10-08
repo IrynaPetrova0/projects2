@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hall_Reader</fullName>
+    <active>true</active>
+    <description>For readers with one - time subscription.</description>
+    <label>Hall Reader</label>
+    <picklistValues>
+        <picklist>Subscription_Type__c</picklist>
+        <values>
+            <fullName>One-time</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
